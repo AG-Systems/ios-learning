@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     //MARK: Actions
     @IBAction func actionkey(_ sender: UIButton)
     {
-        title_text.text = "auriga"
+        title_text.text = "auriga "
     }
     
 }
