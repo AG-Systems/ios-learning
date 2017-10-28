@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     {
         // Hide the keyboard.
         textField.resignFirstResponder()
+        title_text.text = textField.text
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -39,7 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     //MARK: Actions
     @IBAction func actionkey(_ sender: UIButton)
     {
-        title_text.text = "auriga "
+        //title_text.text = textField.text
     }
     
 }
