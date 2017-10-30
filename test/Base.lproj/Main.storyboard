@@ -80,9 +80,13 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Mj5-Cd-Qf4">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="325"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mj5-Cd-Qf4" secondAttribute="height" multiplier="1:1" id="Spz-vP-30S"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="OTd-bc-Gpg" appends="YES" id="NWF-LQ-zIk"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -100,11 +104,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="image_view" destination="OTd-bc-Gpg" id="lW4-Sa-t7O"/>
                         <outlet property="input" destination="EeX-KP-EF4" id="kIw-xy-WNi"/>
+                        <outlet property="photo_view" destination="Mj5-Cd-Qf4" id="l9P-1J-q4C"/>
                         <outlet property="title_text" destination="SPw-EP-da9" id="TKj-2H-5uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OTd-bc-Gpg">
+                    <connections>
+                        <action selector="imageFunction:" destination="BYZ-38-t0r" id="esn-LQ-Lgp"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="131.78410794602701"/>
         </scene>
