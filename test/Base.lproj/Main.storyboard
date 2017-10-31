@@ -13,6 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -85,7 +86,7 @@
                                             <constraint firstAttribute="width" secondItem="Mj5-Cd-Qf4" secondAttribute="height" multiplier="1:1" id="Spz-vP-30S"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="OTd-bc-Gpg" appends="YES" id="NWF-LQ-zIk"/>
+                                            <outletCollection property="gestureRecognizers" destination="PLI-Iw-7JR" appends="YES" id="bFI-St-oxJ"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -104,16 +105,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="image_view" destination="OTd-bc-Gpg" id="lW4-Sa-t7O"/>
+                        <outlet property="image_view" destination="Mj5-Cd-Qf4" id="l9P-1J-q4C"/>
                         <outlet property="input" destination="EeX-KP-EF4" id="kIw-xy-WNi"/>
-                        <outlet property="photo_view" destination="Mj5-Cd-Qf4" id="l9P-1J-q4C"/>
                         <outlet property="title_text" destination="SPw-EP-da9" id="TKj-2H-5uj"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="OTd-bc-Gpg">
+                <tapGestureRecognizer id="PLI-Iw-7JR">
                     <connections>
-                        <action selector="imageFunction:" destination="BYZ-38-t0r" id="esn-LQ-Lgp"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="ATa-Zn-SRj"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

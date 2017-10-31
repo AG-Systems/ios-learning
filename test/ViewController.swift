@@ -13,15 +13,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //MARK: Properties
     @IBOutlet weak var title_text: UILabel!
     
-    @IBOutlet weak var photo_view: UIImageView!
+    @IBOutlet weak var image_view: UIImageView!
     @IBOutlet weak var input: UITextField!
     
+    var typed_input = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // Handle the text field’s user input through delegate callbacks.
         input.delegate = self
+        
+        input.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         input.resignFirstResponder()
         
         title_text.text = textField.text
+        typed_input = textField.text!
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -61,7 +65,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
         
         // Set photoImageView to display the selected image.
-        photo_view.image = selectedImage
+        image_view.image = selectedImage
         
         // Dismiss the picker.
         dismiss(animated: true, completion: nil)
@@ -70,13 +74,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     //MARK: Actions
     @IBAction func actionkey(_ sender: UIButton)
     {
-        //title_text.text = textField.text
+        // title_text.text = typed_input
+        title_text.text = "Please input another item"
+        input.text = ""
     }
     
-    @IBAction func imageFunction(_ sender: UITapGestureRecognizer)
+    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer)
     {
         // Hide the keyboard.
-        input.resignFirstResponder()
+        // input.resignFirstResponder()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
@@ -88,5 +94,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.delegate = self
         present(imagePickerController, animated: true, completion: nil)
     }
+
+    @objc func textFieldDidChange(textField: UITextField)
+    {
+        
+        
+        if(textField.text != " " && textField.text != "")
+        {
+            title_text.text = textField.text!
+            typed_input = textField.text!
+        }
+        else
+        {
+            title_text.text = "Hello!"
+            typed_input = "Hello!"
+        }
+    }
+    
 }
 
