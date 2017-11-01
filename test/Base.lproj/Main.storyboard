@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -76,10 +75,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FIQ-zW-xSh">
-                                <rect key="frame" x="25" y="197" width="325" height="325"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FIQ-zW-xSh">
+                                <rect key="frame" x="25" y="216" width="325" height="325"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Mj5-Cd-Qf4">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Mj5-Cd-Qf4">
                                         <rect key="frame" x="0.0" y="0.0" width="325" height="325"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -91,15 +90,25 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1A-Te-XdL" customClass="RatingControl" customModule="test" customModuleProvider="target">
+                                <rect key="frame" x="25" y="159" width="50" height="36"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.23789112066458709" green="0.23667116619964046" blue="0.23911107512953367" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="FIQ-zW-xSh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="196" id="2cH-3r-vCh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V1A-Te-XdL" secondAttribute="trailing" constant="300" id="DtT-MG-3AJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oX3-5z-iLp" secondAttribute="trailing" constant="16" id="NBa-Qb-aCl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V1A-Te-XdL" secondAttribute="trailing" constant="300" id="RV6-rc-ifr"/>
                             <constraint firstItem="oX3-5z-iLp" firstAttribute="top" secondItem="FIQ-zW-xSh" secondAttribute="bottom" constant="25" id="SOb-Qn-4bq"/>
                             <constraint firstItem="FIQ-zW-xSh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="XFo-ml-gw6"/>
+                            <constraint firstItem="FIQ-zW-xSh" firstAttribute="top" secondItem="V1A-Te-XdL" secondAttribute="bottom" constant="25" id="bJR-4f-0NL"/>
+                            <constraint firstItem="V1A-Te-XdL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="139" id="fXa-Qx-4dq"/>
+                            <constraint firstItem="V1A-Te-XdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="lEc-nj-qYy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FIQ-zW-xSh" secondAttribute="trailing" constant="25" id="p0c-Jd-jt4"/>
                             <constraint firstItem="oX3-5z-iLp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vEh-eF-ui7"/>
+                            <constraint firstItem="FIQ-zW-xSh" firstAttribute="top" secondItem="V1A-Te-XdL" secondAttribute="bottom" constant="21" id="vKv-sb-vWW"/>
+                            <constraint firstItem="V1A-Te-XdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="x6B-Bh-6X4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oX3-5z-iLp" secondAttribute="bottom" constant="10" id="xEt-0t-dhK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -110,6 +119,7 @@
                         <outlet property="title_text" destination="SPw-EP-da9" id="TKj-2H-5uj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="PLI-Iw-7JR">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="ATa-Zn-SRj"/>
